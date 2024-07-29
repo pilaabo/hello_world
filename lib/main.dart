@@ -14,44 +14,46 @@ class MyApp extends StatelessWidget {
         ),
         body: Builder(
           builder: (context) {
-            return Padding(
-              padding: const EdgeInsets.all(20),
-              child: Center(
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(10),
-                      child: Text(
-                        'Hello World Travel',
-                        style: TextStyle(
-                            fontSize: 26.0,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.blue[800]),
+            return SingleChildScrollView(
+              child: Padding(
+                padding: const EdgeInsets.all(20),
+                child: Center(
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(10),
+                        child: Text(
+                          'Hello World Travel',
+                          style: TextStyle(
+                              fontSize: 26.0,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.blue[800]),
+                        ),
                       ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(5),
-                      child: Text(
-                        'Discover the World',
-                        style:
-                            TextStyle(fontSize: 20.0, color: Colors.deepPurpleAccent),
+                      Padding(
+                        padding: const EdgeInsets.all(5),
+                        child: Text(
+                          'Discover the World',
+                          style:
+                              TextStyle(fontSize: 20.0, color: Colors.deepPurpleAccent),
+                        ),
                       ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(15),
-                      child: Image.network(
-                        'https://images.freeimages.com/images/large-previews/eaa/the-beach-1464354.jpg',
-                        height: 350,
+                      Padding(
+                        padding: const EdgeInsets.all(15),
+                        child: Image.network(
+                          'https://images.freeimages.com/images/large-previews/eaa/the-beach-1464354.jpg',
+                          height: 350,
+                        ),
                       ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(15),
-                      child: ElevatedButton(
-                        onPressed: () => contactUs(context),
-                        child: Text('Contact Us'),
-                      ),
-                    )
-                  ],
+                      Padding(
+                        padding: const EdgeInsets.all(15),
+                        child: ElevatedButton(
+                          onPressed: () => contactUs(context),
+                          child: Text('Contact Us'),
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
             );

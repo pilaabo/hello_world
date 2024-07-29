@@ -10,10 +10,25 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           title: Text('Hello World Travel App'),
+          backgroundColor: Colors.deepPurple,
         ),
         body: Center(
-          child: Text(
-            'Hello World Travel',
+          child: Column(
+            children: [
+              Text(
+                'Hello World Travel',
+                style: TextStyle(
+                    fontSize: 26.0,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.blue[800]),
+              ),
+              Text(
+                'Discover the World',
+                style: TextStyle(
+                    fontSize: 20.0,
+                    color: Colors.deepPurpleAccent),
+              ),
+            ],
           ),
         ),
       ),

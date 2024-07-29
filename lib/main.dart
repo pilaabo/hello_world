@@ -5,10 +5,17 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text(
-        'Hello World Travel',
-        textDirection: TextDirection.ltr,
+    return MaterialApp(
+      title: 'Hello World Travel Title',
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Hello World Travel App'),
+        ),
+        body: Center(
+          child: Text(
+            'Hello World Travel',
+          ),
+        ),
       ),
     );
   }

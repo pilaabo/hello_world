@@ -12,33 +12,53 @@ class MyApp extends StatelessWidget {
           title: Text('Hello World Travel App'),
           backgroundColor: Colors.deepPurple,
         ),
-        body: Center(
-          child: Column(
-            children: [
-              Text(
-                'Hello World Travel',
-                style: TextStyle(
-                    fontSize: 26.0,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.blue[800]),
+        body: Builder(
+          builder: (context) {
+            return Center(
+              child: Column(
+                children: [
+                  Text(
+                    'Hello World Travel',
+                    style: TextStyle(
+                        fontSize: 26.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.blue[800]),
+                  ),
+                  Text(
+                    'Discover the World',
+                    style:
+                        TextStyle(fontSize: 20.0, color: Colors.deepPurpleAccent),
+                  ),
+                  Image.network(
+                    'https://images.freeimages.com/images/large-previews/eaa/the-beach-1464354.jpg',
+                    height: 350,
+                  ),
+                  ElevatedButton(
+                    onPressed: () => contactUs(context),
+                    child: Text('Contact Us'),
+                  )
+                ],
               ),
-              Text(
-                'Discover the World',
-                style:
-                    TextStyle(fontSize: 20.0, color: Colors.deepPurpleAccent),
-              ),
-              Image.network(
-                'https://images.freeimages.com/images/large-previews/eaa/the-beach-1464354.jpg',
-                height: 350,
-              ),
-              ElevatedButton(
-                onPressed: () => true,
-                child: Text('Contact Us'),
-              )
-            ],
-          ),
+            );
+          }
         ),
       ),
     );
+  }
+
+  void contactUs(BuildContext context) {
+    showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text('Contact Us'),
+            content: Text('Mail us at hello@world.com'),
+            actions: <Widget>[
+              TextButton(
+                  onPressed: () => Navigator.of(context).pop(),
+                  child: Text('Close'))
+            ],
+          );
+        });
   }
 }
